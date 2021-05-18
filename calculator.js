@@ -7,10 +7,11 @@ const prompt = require("prompt-sync")(); // Please don't touch me :)
 const num1 = prompt("Please enter the first number:");
 const num2 = prompt("Please enter the second number:");
 const op = prompt("Please choose the operation (+, -, /, *):");
-let x,y;
-x= parseInt(num1);
-y= parseInt(num2);
+
+let x= parseInt(num1);
+let y= parseInt(num2);
 let sol;
+if ( x && y){
 if (x===parseInt(num1) && y===parseInt(num2) && op==="+"){
     sol = x + y;
     console.log(`${x} ${op} ${y} = ${sol}`);
@@ -23,10 +24,8 @@ if (x===parseInt(num1) && y===parseInt(num2) && op==="+"){
 }else if (x===parseInt(num1) && y===parseInt(num2) && op==="/"){
     sol = x / y;
     console.log(`${x} ${op} ${y} = ${sol}`);
-}else if ( x===parseInt(num1) && y===parseInt(num2) && (op!=="*"||op!=="-"||op!=="+"||op!=="/") ){
+}else {
     console.log(`the operation is not valid`);
 
-}else if ( x !==parseInt(num1) || y !==parseInt(num2) ){
-    console.log(`the numbers were invalid`);
 }
-
+}else console.log("invalid number");
